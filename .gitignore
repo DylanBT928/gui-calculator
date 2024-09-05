@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# CLion project files
+.idea
+cmake-build-*
+
+**/.DS_Store
