@@ -35,4 +35,6 @@
 .idea
 cmake-build-*
 
+# Misc.
 **/.DS_Store
+FONT_PATH.h
