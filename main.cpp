@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "FONT_PATH.h" // File path for font file
+#include <iostream>
 
 int main()
 {
@@ -19,8 +20,8 @@ int main()
     sf::RectangleShape nineButton(sf::Vector2f(57, 47));
     sf::RectangleShape decimalButton(sf::Vector2f(57, 48));
     sf::RectangleShape clearButton(sf::Vector2f(57, 47));
-    sf::RectangleShape powerButton(sf::Vector2f(56, 47));
-    sf::RectangleShape signButton(sf::Vector2f(57, 47));
+    sf::RectangleShape signButton(sf::Vector2f(56, 47));
+    sf::RectangleShape powerButton(sf::Vector2f(57, 47));
     sf::RectangleShape divideButton(sf::Vector2f(60, 47));
     sf::RectangleShape multiplyButton(sf::Vector2f(60, 47));
     sf::RectangleShape subtractButton(sf::Vector2f(60, 47));
@@ -39,8 +40,8 @@ int main()
     nineButton.setPosition(sf::Vector2f(115, 130));
     decimalButton.setPosition(sf::Vector2f(115, 274));
     clearButton.setPosition(sf::Vector2f(0, 82));
-    powerButton.setPosition(sf::Vector2f(58, 82));
-    signButton.setPosition(sf::Vector2f(115, 82));
+    signButton.setPosition(sf::Vector2f(58, 82));
+    powerButton.setPosition(sf::Vector2f(115, 82));
     divideButton.setPosition(sf::Vector2f(173, 82));
     multiplyButton.setPosition(sf::Vector2f(173, 130));
     subtractButton.setPosition(sf::Vector2f(173, 178));
@@ -84,11 +85,11 @@ int main()
     sf::Text nineText("9", font, 32);
     sf::Text decimalText(".", font, 32);
     sf::Text clearText("AC", font, 24);
-    sf::Text powerText_base("x", font, 26);
-    sf::Text powerText_exponent("y", font, 20);
     sf::Text signText_positive("+", font, 24);
     sf::Text signText_separator("/", font, 24);
     sf::Text signText_negative("-", font, 24);
+    sf::Text powerText_base("x", font, 26);
+    sf::Text powerText_exponent("y", font, 20);
     sf::Text divideText("/", font, 32);
     sf::Text multiplyText("x", font, 32);
     sf::Text subtractText("-", font, 40);
@@ -107,11 +108,11 @@ int main()
     nineText.setPosition(sf::Vector2f(133, 135));
     decimalText.setPosition(sf::Vector2f(139, 274));
     clearText.setPosition(sf::Vector2f(12, 90));
-    powerText_base.setPosition(sf::Vector2f(130, 90));
-    powerText_exponent.setPosition(sf::Vector2f(146, 85));
     signText_positive.setPosition(sf::Vector2f(69, 86));
     signText_separator.setPosition(sf::Vector2f(78, 90));
     signText_negative.setPosition(sf::Vector2f(87, 95));
+    powerText_base.setPosition(sf::Vector2f(130, 90));
+    powerText_exponent.setPosition(sf::Vector2f(146, 85));
     divideText.setPosition(sf::Vector2f(195, 86));
     multiplyText.setPosition(sf::Vector2f(194, 131));
     subtractText.setPosition(sf::Vector2f(195, 175));
@@ -131,6 +132,106 @@ int main()
 
         window.clear(sf::Color(38, 38, 38));
 
+        // Buttons
+        if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+            if (sf::Mouse::getPosition(window).x >= 0 &&
+                sf::Mouse::getPosition(window).y >= 274 &&
+                sf::Mouse::getPosition(window).x <= 114 &&
+                sf::Mouse::getPosition(window).y <= 274+48)
+                std::cout << "0" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 0 &&
+                sf::Mouse::getPosition(window).y >= 226 &&
+                sf::Mouse::getPosition(window).x <= 57 &&
+                sf::Mouse::getPosition(window).y <= 226+47)
+                std::cout << "1" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 58 &&
+                sf::Mouse::getPosition(window).y >= 226 &&
+                sf::Mouse::getPosition(window).x <= 58+56 &&
+                sf::Mouse::getPosition(window).y <= 226+47)
+                std::cout << "2" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 115 &&
+                sf::Mouse::getPosition(window).y >= 226 &&
+                sf::Mouse::getPosition(window).x <= 115+47 &&
+                sf::Mouse::getPosition(window).y <= 226+47)
+                std::cout << "3" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 0 &&
+                sf::Mouse::getPosition(window).y >= 178 &&
+                sf::Mouse::getPosition(window).x <= 57 &&
+                sf::Mouse::getPosition(window).y <= 178+47)
+                std::cout << "4" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 58 &&
+                sf::Mouse::getPosition(window).y >= 178 &&
+                sf::Mouse::getPosition(window).x <= 58+56 &&
+                sf::Mouse::getPosition(window).y <= 178+47)
+                std::cout << "5" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 115 &&
+                sf::Mouse::getPosition(window).y >= 178 &&
+                sf::Mouse::getPosition(window).x <= 115+57 &&
+                sf::Mouse::getPosition(window).y <= 178+47)
+                std::cout << "6" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 0 &&
+                sf::Mouse::getPosition(window).y >= 130 &&
+                sf::Mouse::getPosition(window).x <= 57 &&
+                sf::Mouse::getPosition(window).y <= 130+47)
+                std::cout << "7" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 58 &&
+                sf::Mouse::getPosition(window).y >= 130 &&
+                sf::Mouse::getPosition(window).x <= 58+56 &&
+                sf::Mouse::getPosition(window).y <= 130+47)
+                std::cout << "8" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 115 &&
+                sf::Mouse::getPosition(window).y >= 130 &&
+                sf::Mouse::getPosition(window).x <= 115+57 &&
+                sf::Mouse::getPosition(window).y <= 130+47)
+                std::cout << "9" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 115 &&
+                sf::Mouse::getPosition(window).y >= 274 &&
+                sf::Mouse::getPosition(window).x <= 115+57 &&
+                sf::Mouse::getPosition(window).y <= 274+48)
+                std::cout << "." << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 0 &&
+                sf::Mouse::getPosition(window).y >= 82 &&
+                sf::Mouse::getPosition(window).x <= 57 &&
+                sf::Mouse::getPosition(window).y <= 82+47)
+                std::cout << "AC" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 58 &&
+                sf::Mouse::getPosition(window).y >= 82 &&
+                sf::Mouse::getPosition(window).x <= 58+56 &&
+                sf::Mouse::getPosition(window).y <= 82+47)
+                std::cout << "+/-" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 115 &&
+                sf::Mouse::getPosition(window).y >= 82 &&
+                sf::Mouse::getPosition(window).x <= 115+57 &&
+                sf::Mouse::getPosition(window).y <= 82+47)
+                std::cout << "x^y" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 173 &&
+                sf::Mouse::getPosition(window).y >= 82 &&
+                sf::Mouse::getPosition(window).x <= 173+60 &&
+                sf::Mouse::getPosition(window).y <= 82+47)
+                std::cout << "/" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 173 &&
+                sf::Mouse::getPosition(window).y >= 130 &&
+                sf::Mouse::getPosition(window).x <= 173+60 &&
+                sf::Mouse::getPosition(window).y <= 130+47)
+                std::cout << "*" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 173 &&
+                sf::Mouse::getPosition(window).y >= 178 &&
+                sf::Mouse::getPosition(window).x <= 173+60 &&
+                sf::Mouse::getPosition(window).y <= 178+47)
+                std::cout << "-" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 173 &&
+                sf::Mouse::getPosition(window).y >= 226 &&
+                sf::Mouse::getPosition(window).x <= 173+60 &&
+                sf::Mouse::getPosition(window).y <= 226+47)
+                std::cout << "+" << std::endl;
+            else if (sf::Mouse::getPosition(window).x >= 173 &&
+                sf::Mouse::getPosition(window).y >= 274 &&
+                sf::Mouse::getPosition(window).x <= 173+60 &&
+                sf::Mouse::getPosition(window).y <= 274+48)
+                std::cout << "=" << std::endl;
+        }
+
         // Draw buttons
         window.draw(zeroButton);
         window.draw(oneButton);
@@ -144,8 +245,8 @@ int main()
         window.draw(nineButton);
         window.draw(decimalButton);
         window.draw(clearButton);
-        window.draw(powerButton);
         window.draw(signButton);
+        window.draw(powerButton);
         window.draw(divideButton);
         window.draw(multiplyButton);
         window.draw(subtractButton);
@@ -165,11 +266,11 @@ int main()
         window.draw(nineText);
         window.draw(decimalText);
         window.draw(clearText);
-        window.draw(powerText_base);
-        window.draw(powerText_exponent);
         window.draw(signText_positive);
         window.draw(signText_separator);
         window.draw(signText_negative);
+        window.draw(powerText_base);
+        window.draw(powerText_exponent);
         window.draw(divideText);
         window.draw(multiplyText);
         window.draw(subtractText);
